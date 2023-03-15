@@ -19,13 +19,14 @@ class Client {
             br = new BufferedReader(in);
             bw = new BufferedWriter(out);
 
-            Scanner scanner = new Scanner(System.in);
             while (true) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter Msg :");
                 String msg = scanner.nextLine();
                 bw.write(msg);
                 bw.newLine();
                 bw.flush();
-                System.out.println("Server :" + br.readLine());
+                System.out.println("Form Server :" + br.readLine());
                 if (msg.equalsIgnoreCase("BYE"))
                     break;
             }
@@ -43,6 +44,7 @@ class Client {
                     in.close();
                 if (out != null)
                     out.close();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

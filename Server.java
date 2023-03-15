@@ -11,37 +11,47 @@ class Server {
         BufferedWriter bw = null;
         ServerSocket ss = null;
 
+        String msg = null;
         try {
             ss = new ServerSocket(1234);
+
+            while (true) {
+                try {
+                    s = ss.accept();
+                    in = new InputStreamReader(s.getInputStream());
+                    out = new OutputStreamWriter(s.getOutputStream());
+
+                    br = new BufferedReader(in);
+                    bw = new BufferedWriter(out);
+
+                    while (true) {
+                        msg = br.readLine();
+                        System.out.println("From Client :" + msg);
+                        bw.write("MSG Received By Server");
+                        bw.newLine();
+                        bw.flush();
+                        if (msg.equalsIgnoreCase("BYE"))
+                            break;
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                if (msg.equalsIgnoreCase("BYE"))
+                    break;
+
+            }
         } catch (IOException e) {
             e.printStackTrace();
-        }
-
-        while (true) {
+        } finally {
             try {
-                s = ss.accept();
-                in = new InputStreamReader(s.getInputStream());
-                out = new OutputStreamWriter(s.getOutputStream());
-
-                br = new BufferedReader(in);
-                bw = new BufferedWriter(out);
-
-                while (true) {
-                    String msg = br.readLine();
-                    System.out.println("Client :" + msg);
-                    bw.write("MSG Received");
-                    bw.newLine();
-                    bw.flush();
-                    if (msg.equalsIgnoreCase("BYE"))
-                        break;
-                }
                 s.close();
                 ss.close();
                 br.close();
                 bw.close();
                 in.close();
                 out.close();
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
