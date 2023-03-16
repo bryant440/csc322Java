@@ -1,7 +1,7 @@
 public class Main{
 public static void main(String[] args){
-  MyThreadA j = new Thread();
-  MyThreadB s = new Thread();
+  MyThreadA j = new MyThreadA();
+  MyThreadB s = new MyThreadB();
   j.start();
   s.start();
     
@@ -17,3 +17,4 @@ public static void main(String[] args){
    } 
   }
 }
+//note that threads are usually extended whereas classes are implemneted.
