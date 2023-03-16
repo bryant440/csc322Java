@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.*;
 import java.net.*;
-
+//READS COONTENTS OF A URL
 public class Net2 {
     public static void main(String[] args) {
         URL url = null;
@@ -9,7 +9,7 @@ public class Net2 {
         try {
             url = new URL("https://blog.openreplay.com/an-introduction-to-babel/");
 
-            BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream()));
+            BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream()));//Buffer-input-openStream
             String msg;
             while ((msg = bf.readLine()) != null)
                 System.out.println(msg);
