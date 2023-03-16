@@ -11,3 +11,18 @@ class MyThread extends Thread{
   }
  }
 }
+//creating of threads
+/*
+public class Main{
+public static void main(String[] args){
+MyThread s = new Thread():
+s.start();
+   
+}
+public MyThread extends Thread{
+
+public void run(){
+System.out.println('slime');
+}}
+   
+}*/
