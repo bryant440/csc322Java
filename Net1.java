@@ -24,4 +24,16 @@ url.getPort() returns the port number of the URL (-1 because it is not specified
 url.getFile() returns the file name of the URL ("/an-introduction-to-babel/" in this case).
 url.getRef() returns the reference of the URL (null because it is not specified in this case).
 url.getPath() returns the path of the URL ("/an-introduction-to-babel/" in this case).
+
+public class Main{
+public static void main(String[] args){
+URL url = null
+try{
+System.out.println("path:" + url.getPath());
+}
+catch(Exception e){
+e.printStackTrace();
+}
+}
+}
 */
