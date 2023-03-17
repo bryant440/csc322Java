@@ -6,5 +6,6 @@ DatagramPacket packet = new DatagramPacket(buf,buf.length);
  server.receive(packet);
   String response = new String(packet.getData());
   System.out.println("response" + response)
+   server.close();
 }
 }
