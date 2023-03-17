@@ -20,4 +20,12 @@ public class Net2 {
         }
     }
 
-}
+}/*
+BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream()));
+String guap;
+while((guap = bf.readline()) != null){
+
+System.out.println(guap);
+    bf.close();*/
+    
+    }
