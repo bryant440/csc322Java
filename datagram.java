@@ -1,7 +1,7 @@
 public class UDPClient{
 
 public static void main(String[] args){
-
+//
 DatagramSocket client = new DatagramSocket();
 InetAddress add = InetAddress.getByName("local host");
 String guap = "miss the rage";
