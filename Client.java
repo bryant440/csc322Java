@@ -26,7 +26,7 @@ class Client {
                 bw.write(msg);
                 bw.newLine();
                 bw.flush();
-                System.out.println("Form Server :" + br.readLine());
+                System.out.println("From Server :" + br.readLine());
                 if (msg.equalsIgnoreCase("BYE"))
                     break;
             }
